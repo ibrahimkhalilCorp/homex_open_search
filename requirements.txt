@@ -1,0 +1,8 @@
+Flask
+flask-cors
+flasgger
+opensearch-py
+openai
+python-dotenv
+requests
+typing-extensions
