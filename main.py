@@ -42,11 +42,11 @@ class PropertyAddress(BaseModel):
 class DataLoadRequest(BaseModel):
     addresses: List[PropertyAddress]
     save_to_file: Optional[bool] = True
-    index_in_opensearch: Optional[bool] = False
+    index_in_opensearch: Optional[bool] = True
 
 
 class SearchRequest(BaseModel):
-    query: str
+    query: Optional[str] = "property with 2+ acres in HI"
     page: Optional[int] = 1
     size: Optional[int] = 20
     use_cache: Optional[bool] = True
