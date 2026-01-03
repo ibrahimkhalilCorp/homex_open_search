@@ -1,8 +1,5 @@
-Flask
-flask-cors
-flasgger
-opensearch-py
-openai
-python-dotenv
+fastapi
+uvicorn
 requests
-typing-extensions
+python-dotenv
+pydantic

@@ -1,7 +1,6 @@
 .venv
-Test
-Test2
-pseudo code.docx
+test
 .env
-replay_pid15496.log
-src/data/property-api-v2-openapi3-swagger.json
+.idea
+__pycache__
+app/__pycache__

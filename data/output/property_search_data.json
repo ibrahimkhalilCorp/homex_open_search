@@ -1,0 +1,1530 @@
+{
+  "metadata": {
+    "pageNumber": 1,
+    "pageSize": 1,
+    "totalRecords": 3,
+    "totalPages": 1
+  },
+  "items": [
+    {
+      "clip": "8031606271",
+      "v1PropertyId": "15003:115848617",
+      "propertyAddress": {
+        "streetAddress": "811 MIDDLE ST",
+        "propertyStreetAddressParsed": {
+          "houseNumber": "811",
+          "streetNamePrefixDir": null,
+          "streetName": "MIDDLE",
+          "streetNameSuffix": "ST",
+          "streetNameSuffixDir": null,
+          "unitType": null,
+          "unitNumber": null
+        },
+        "city": "HONOLULU",
+        "state": "HI",
+        "zipCode": "96819",
+        "zipPlus4": "2343",
+        "county": "HONOLULU"
+      },
+      "propertyAPN": {
+        "fipsCode": "15003",
+        "apnSequenceNumber": 1,
+        "apnParcelNumberUnformatted": "1120160060000",
+        "apnParcelNumberFormatted": "1-1-2-016-006-0000",
+        "previousApnUnformatted": null,
+        "alternateApn": null,
+        "universalParcelId": "115848617"
+      },
+      "addressMatchInformation": {
+        "propertyMatchScore": 9,
+        "resultCode": "ADDR:MULTIPLE",
+        "matchCode": "ADDR:ADDREXACT",
+        "addressType": "PROPERTY",
+        "addressMatchCode": "A0000",
+        "addressMatchCodeDescription": "Matched unique number"
+      },
+      "property_details": {
+        "allBuildingsSummary": {
+          "buildingsCount": 2,
+          "unitsCount": null,
+          "roomsCount": null,
+          "bedroomsCount": null,
+          "bathroomsCount": null,
+          "fullBathroomsCount": null,
+          "halfBathroomsCount": null,
+          "oneQtrBathroomsCount": null,
+          "threeQtrBathroomsCount": null,
+          "bathroomFixturesCount": null,
+          "fireplacesCount": null,
+          "livingAreaSquareFeet": 33549.0,
+          "totalAreaSquareFeet": 33549.0,
+          "openAreasSquareFeet": null,
+          "officeSpaceSquareFeet": null,
+          "elevatorsCount": null,
+          "loadingDocksCount": null,
+          "railSpursCount": null,
+          "truckDoorsCount": null
+        },
+        "ownership": {
+          "clip": "8031606271",
+          "currentOwners": {
+            "ownerNames": [
+              {
+                "sequenceNumber": 1,
+                "fullName": "CITY & COUNTY OF HONOLULU",
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": true
+              },
+              {
+                "sequenceNumber": 2,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 3,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 4,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              }
+            ],
+            "relationshipTypeCode": null,
+            "ownerEtalCode": null,
+            "occupancyCode": null,
+            "ownershipRightsCode": null
+          },
+          "currentOwnerMailingInfo": {
+            "mailingAddress": {
+              "careOfName": null,
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": null,
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": null,
+                "mailingMode": null,
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": null,
+              "state": null,
+              "zipCode": null,
+              "carrierRoute": null,
+              "foreignAddress": null
+            },
+            "ownerMailingOptOutIndicator": null
+          }
+        },
+        "siteLocation": {
+          "clip": "8031606271",
+          "coordinatesParcel": {
+            "lat": 21.335,
+            "lng": -157.884741
+          },
+          "coordinatesBlock": {
+            "lat": 21.335508,
+            "lng": -157.884668
+          },
+          "locationLegal": {
+            "subdivisionName": "MTL OFF /CREDITUNION",
+            "subdivisionTractNumber": null,
+            "subdivisionPlatBookNumber": null,
+            "subdivisionPlatPageNumber": null,
+            "blockNumber": null,
+            "blockNumberSuffix": null,
+            "lotNumber": null,
+            "lotNumberSuffix": null,
+            "description": null
+          },
+          "locationSurvey": {
+            "range": null,
+            "township": null,
+            "section": null,
+            "quarterSection": null
+          },
+          "neighborhood": {
+            "code": "AO8",
+            "name": "KAPALAMA"
+          },
+          "municipality": {
+            "code": "15003OA001",
+            "name": "OAHU"
+          },
+          "town": {
+            "code": null
+          },
+          "jurisdictionCounty": {
+            "code": null
+          },
+          "cbsa": {
+            "code": "46520",
+            "type": "Metro"
+          },
+          "censusTract": {
+            "id": "0060003000"
+          },
+          "taxRateArea": {
+            "code": null
+          },
+          "taxDistrict": {
+            "name": null
+          },
+          "landUseAndZoningCodes": {
+            "propertyTypeCode": "20",
+            "landUseCode": "200",
+            "stateLandUseCode": "400",
+            "stateLandUseDescription": "INDUSTRIAL",
+            "countyLandUseCode": "400",
+            "countyLandUseDescription": "INDUSTRIAL",
+            "zoningCode": "U/42/40",
+            "zoningCodeDescription": "I-2 GENERAL INDUSTRY",
+            "isManufacturedHome": null
+          },
+          "lot": {
+            "areaAcres": 3.9207,
+            "areaSquareFeet": 170785,
+            "areaSquareFeetUsable": null,
+            "depthFeet": null,
+            "frontFeet": null,
+            "shapeCode": null,
+            "topographyType": null,
+            "easementTypeCode": null
+          },
+          "utilities": {
+            "fuelTypeCode": null,
+            "electricityWiringTypeCode": null,
+            "sewerTypeCode": null,
+            "utilitiesTypeCode": null,
+            "waterTypeCode": null
+          }
+        },
+        "taxAssessment": [
+          {
+            "clip": "8031606271",
+            "taxAmount": {
+              "billedYear": null,
+              "delinquentYear": null,
+              "areaCode": "4",
+              "areaCodeDescription": null,
+              "propertyTaxRate": null,
+              "calculatedTotalExemptionAmount": 31086100.0,
+              "totalTaxExemptionAmount": null,
+              "totalTaxAmount": null,
+              "countyTaxAmount": null,
+              "schoolTaxAmount": null,
+              "townTaxAmount": null,
+              "villageTaxAmount": null,
+              "netTaxAmount": null
+            },
+            "taxExemptions": {
+              "commercial": [],
+              "residential": []
+            },
+            "assessedValue": {
+              "taxAssessedYear": 2025,
+              "calculatedTotalValue": 31086100.0,
+              "calculatedLandValue": 24874300.0,
+              "calculatedImprovementValue": 6211800.0,
+              "calculatedImprovementValuePercentage": 20,
+              "calculatedTotalValueSourceCode": "M",
+              "taxableValue": null,
+              "taxableImprovementValue": null,
+              "taxableLandValue": null,
+              "taxableOtherValue": null
+            },
+            "taxrollUpdate": {
+              "lastAssessorUpdateDate": "2025-09-22",
+              "taxrollCertificationDate": "2025-02-01"
+            },
+            "schoolDistricts": {
+              "school": {
+                "code": "1500030",
+                "name": "HAWAII DEPT OF ED",
+                "elementary": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "middle": {
+                  "code": null,
+                  "name": null
+                },
+                "high": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "communityCollege": {
+                  "code": null,
+                  "name": null
+                }
+              }
+            },
+            "serviceDistricts": {
+              "fire": {
+                "code": null,
+                "name": null
+              },
+              "trash": {
+                "code": null,
+                "name": null
+              },
+              "lighting": {
+                "code": null,
+                "name": null
+              },
+              "tax": {
+                "code": null,
+                "name": null
+              },
+              "sewer": {
+                "code": null,
+                "name": null
+              },
+              "utility": {
+                "code": null,
+                "name": null
+              },
+              "water": {
+                "code": null,
+                "name": null
+              }
+            }
+          }
+        ],
+        "mostRecentOwnerTransfer": [
+          {
+            "clip": "8031606271",
+            "transactionDetails": {
+              "primaryCategoryCode": "A",
+              "deedCategoryCode": "G",
+              "saleDateDerived": "1996-05-28",
+              "saleRecordingDateDerived": "1996-06-06",
+              "saleAmount": null,
+              "saleTypeCode": null,
+              "saleDocumentTypeCode": "DD",
+              "saleDocumentNumber": "80231",
+              "saleBookNumber": null,
+              "salePageNumber": null,
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": "M",
+              "isCashPurchase": true,
+              "isMortgagePurchase": false,
+              "isInterfamilyRelated": false,
+              "isInvestorPurchase": false,
+              "isResale": true,
+              "isShortSale": false,
+              "isForeclosureReo": false,
+              "isForeclosureReoSale": false
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": "811",
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": "MIDDLE",
+                "mode": "ST",
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": "HONOLULU",
+              "state": "HI",
+              "zipCode": "968192343",
+              "carrierRoute": "C016",
+              "county": "HONOLULU"
+            },
+            "titleCompany": {
+              "name": null,
+              "code": null
+            },
+            "propertyDetails": {
+              "actualYearBuilt": 1966,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": false
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": "50",
+              "landUseCode": "300",
+              "stateLandUseDescription": "INDUSTRIAL",
+              "countyLandUseDescription": null,
+              "zoningCode": "U/42/40"
+            },
+            "buyerDetails": {
+              "buyerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD",
+                  "lastName": "OWNER",
+                  "firstNameAndMiddleInitial": "RECORD",
+                  "isCorporate": null
+                }
+              ],
+              "relationshipTypeCode": null,
+              "etalCode": "",
+              "occupancyCode": null,
+              "ownershipRightsCode": null,
+              "mailingAddress": {
+                "careOfName": null,
+                "streetAddress": "",
+                "streetAddressParsed": {
+                  "houseNumber": "",
+                  "houseNumberSuffix": "",
+                  "houseNumber2": "",
+                  "direction": "",
+                  "streetName": "",
+                  "mode": "",
+                  "quadrant": "",
+                  "unitNumber": ""
+                },
+                "city": "",
+                "state": "",
+                "zipCode": "",
+                "carrierRoute": ""
+              },
+              "hasPartialInterest": null,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD"
+                }
+              ]
+            }
+          }
+        ],
+        "lastMarketSale": [
+          {
+            "clip": "8031606271",
+            "transactionDetails": {
+              "primaryCategoryCode": "A",
+              "deedCategoryCode": "G",
+              "saleDateDerived": "1996-05-28",
+              "saleRecordingDateDerived": "1996-06-06",
+              "saleAmount": null,
+              "saleTypeCode": null,
+              "saleDocumentTypeCode": "DD",
+              "saleDocumentNumber": "80231",
+              "saleBookNumber": null,
+              "salePageNumber": null,
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": "M",
+              "isCashPurchase": true,
+              "isMortgagePurchase": false,
+              "isInterfamilyRelated": false,
+              "isInvestorPurchase": false,
+              "isResale": true,
+              "isShortSale": false,
+              "isForeclosureReo": false,
+              "isForeclosureReoSale": false
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": "811",
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": "MIDDLE",
+                "mode": "ST",
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": "HONOLULU",
+              "state": "HI",
+              "zipCode": "968192343",
+              "carrierRoute": "C016",
+              "county": "HONOLULU"
+            },
+            "titleCompany": {
+              "name": null,
+              "code": null
+            },
+            "propertyDetails": {
+              "actualYearBuilt": 1966,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": false
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": "50",
+              "landUseCode": "300",
+              "stateLandUseDescription": "INDUSTRIAL",
+              "countyLandUseDescription": null,
+              "zoningCode": "U/42/40"
+            },
+            "buyerDetails": {
+              "buyerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD",
+                  "lastName": "OWNER",
+                  "firstNameAndMiddleInitial": "RECORD",
+                  "isCorporate": null
+                }
+              ],
+              "relationshipTypeCode": null,
+              "etalCode": "",
+              "occupancyCode": null,
+              "ownershipRightsCode": null,
+              "mailingAddress": {
+                "careOfName": null,
+                "streetAddress": "",
+                "streetAddressParsed": {
+                  "houseNumber": "",
+                  "houseNumberSuffix": "",
+                  "houseNumber2": "",
+                  "direction": "",
+                  "streetName": "",
+                  "mode": "",
+                  "quadrant": "",
+                  "unitNumber": ""
+                },
+                "city": "",
+                "state": "",
+                "zipCode": "",
+                "carrierRoute": ""
+              },
+              "hasPartialInterest": null,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clip": "1082098998",
+      "v1PropertyId": "15003:115848768",
+      "propertyAddress": {
+        "streetAddress": "811 MIDDLE ST",
+        "propertyStreetAddressParsed": {
+          "houseNumber": "811",
+          "streetNamePrefixDir": null,
+          "streetName": "MIDDLE",
+          "streetNameSuffix": "ST",
+          "streetNameSuffixDir": null,
+          "unitType": null,
+          "unitNumber": null
+        },
+        "city": "HONOLULU",
+        "state": "HI",
+        "zipCode": "96819",
+        "zipPlus4": "2343",
+        "county": "HONOLULU"
+      },
+      "propertyAPN": {
+        "fipsCode": "15003",
+        "apnSequenceNumber": 1,
+        "apnParcelNumberUnformatted": "1120160300000",
+        "apnParcelNumberFormatted": "1-1-2-016-030-0000",
+        "previousApnUnformatted": null,
+        "alternateApn": null,
+        "universalParcelId": "115848768"
+      },
+      "addressMatchInformation": {
+        "propertyMatchScore": 9,
+        "resultCode": "ADDR:MULTIPLE",
+        "matchCode": "ADDR:ADDREXACT",
+        "addressType": "PROPERTY",
+        "addressMatchCode": "A0000",
+        "addressMatchCodeDescription": "Matched unique number"
+      },
+      "property_details": {
+        "allBuildingsSummary": {
+          "buildingsCount": 1,
+          "unitsCount": 1,
+          "roomsCount": null,
+          "bedroomsCount": null,
+          "bathroomsCount": null,
+          "fullBathroomsCount": null,
+          "halfBathroomsCount": null,
+          "oneQtrBathroomsCount": null,
+          "threeQtrBathroomsCount": null,
+          "bathroomFixturesCount": null,
+          "fireplacesCount": null,
+          "livingAreaSquareFeet": 650.0,
+          "totalAreaSquareFeet": 650.0,
+          "openAreasSquareFeet": null,
+          "officeSpaceSquareFeet": null,
+          "elevatorsCount": null,
+          "loadingDocksCount": null,
+          "railSpursCount": null,
+          "truckDoorsCount": null
+        },
+        "ownership": {
+          "clip": "1082098998",
+          "currentOwners": {
+            "ownerNames": [
+              {
+                "sequenceNumber": 1,
+                "fullName": "CITY & COUNTY OF HONOLULU",
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": true
+              },
+              {
+                "sequenceNumber": 2,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 3,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 4,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              }
+            ],
+            "relationshipTypeCode": null,
+            "ownerEtalCode": null,
+            "occupancyCode": null,
+            "ownershipRightsCode": null
+          },
+          "currentOwnerMailingInfo": {
+            "mailingAddress": {
+              "careOfName": null,
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": null,
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": null,
+                "mailingMode": null,
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": null,
+              "state": null,
+              "zipCode": null,
+              "carrierRoute": null,
+              "foreignAddress": null
+            },
+            "ownerMailingOptOutIndicator": null
+          }
+        },
+        "siteLocation": {
+          "clip": "1082098998",
+          "coordinatesParcel": {
+            "lat": 21.336327,
+            "lng": -157.885451
+          },
+          "coordinatesBlock": {
+            "lat": 21.335508,
+            "lng": -157.884668
+          },
+          "locationLegal": {
+            "subdivisionName": "MTL CREDIT UNION",
+            "subdivisionTractNumber": null,
+            "subdivisionPlatBookNumber": null,
+            "subdivisionPlatPageNumber": null,
+            "blockNumber": null,
+            "blockNumberSuffix": null,
+            "lotNumber": null,
+            "lotNumberSuffix": null,
+            "description": "811 MIDDLE STREET,HON,HI 650 SF OF OFFICE SPACE"
+          },
+          "locationSurvey": {
+            "range": null,
+            "township": null,
+            "section": null,
+            "quarterSection": null
+          },
+          "neighborhood": {
+            "code": "AO8",
+            "name": "KAPALAMA"
+          },
+          "municipality": {
+            "code": "15003OA001",
+            "name": "OAHU"
+          },
+          "town": {
+            "code": null
+          },
+          "jurisdictionCounty": {
+            "code": null
+          },
+          "cbsa": {
+            "code": "46520",
+            "type": "Metro"
+          },
+          "censusTract": {
+            "id": "0060003000"
+          },
+          "taxRateArea": {
+            "code": null
+          },
+          "taxDistrict": {
+            "name": null
+          },
+          "landUseAndZoningCodes": {
+            "propertyTypeCode": "20",
+            "landUseCode": "211",
+            "stateLandUseCode": "400",
+            "stateLandUseDescription": "INDUSTRIAL",
+            "countyLandUseCode": "400",
+            "countyLandUseDescription": "INDUSTRIAL",
+            "zoningCode": "U/42/40",
+            "zoningCodeDescription": "I-2 GENERAL INDUSTRY",
+            "isManufacturedHome": null
+          },
+          "lot": {
+            "areaAcres": 0.0149,
+            "areaSquareFeet": 650,
+            "areaSquareFeetUsable": null,
+            "depthFeet": null,
+            "frontFeet": null,
+            "shapeCode": null,
+            "topographyType": null,
+            "easementTypeCode": null
+          },
+          "utilities": {
+            "fuelTypeCode": null,
+            "electricityWiringTypeCode": null,
+            "sewerTypeCode": null,
+            "utilitiesTypeCode": null,
+            "waterTypeCode": null
+          }
+        },
+        "taxAssessment": [
+          {
+            "clip": "1082098998",
+            "taxAmount": {
+              "billedYear": null,
+              "delinquentYear": null,
+              "areaCode": "4",
+              "areaCodeDescription": null,
+              "propertyTaxRate": null,
+              "calculatedTotalExemptionAmount": 223700.0,
+              "totalTaxExemptionAmount": null,
+              "totalTaxAmount": null,
+              "countyTaxAmount": null,
+              "schoolTaxAmount": null,
+              "townTaxAmount": null,
+              "villageTaxAmount": null,
+              "netTaxAmount": null
+            },
+            "taxExemptions": {
+              "commercial": [],
+              "residential": []
+            },
+            "assessedValue": {
+              "taxAssessedYear": 2025,
+              "calculatedTotalValue": 223700.0,
+              "calculatedLandValue": 78000.0,
+              "calculatedImprovementValue": 145700.0,
+              "calculatedImprovementValuePercentage": 65,
+              "calculatedTotalValueSourceCode": "M",
+              "taxableValue": null,
+              "taxableImprovementValue": null,
+              "taxableLandValue": null,
+              "taxableOtherValue": null
+            },
+            "taxrollUpdate": {
+              "lastAssessorUpdateDate": "2025-09-22",
+              "taxrollCertificationDate": "2025-02-01"
+            },
+            "schoolDistricts": {
+              "school": {
+                "code": "1500030",
+                "name": "HAWAII DEPT OF ED",
+                "elementary": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "middle": {
+                  "code": null,
+                  "name": null
+                },
+                "high": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "communityCollege": {
+                  "code": null,
+                  "name": null
+                }
+              }
+            },
+            "serviceDistricts": {
+              "fire": {
+                "code": null,
+                "name": null
+              },
+              "trash": {
+                "code": null,
+                "name": null
+              },
+              "lighting": {
+                "code": null,
+                "name": null
+              },
+              "tax": {
+                "code": null,
+                "name": null
+              },
+              "sewer": {
+                "code": null,
+                "name": null
+              },
+              "utility": {
+                "code": null,
+                "name": null
+              },
+              "water": {
+                "code": null,
+                "name": null
+              }
+            }
+          }
+        ],
+        "mostRecentOwnerTransfer": [
+          {
+            "clip": "1082098998",
+            "transactionDetails": {
+              "primaryCategoryCode": null,
+              "deedCategoryCode": null,
+              "saleDateDerived": null,
+              "saleRecordingDateDerived": null,
+              "saleAmount": null,
+              "saleTypeCode": null,
+              "saleDocumentTypeCode": null,
+              "saleDocumentNumber": null,
+              "saleBookNumber": null,
+              "salePageNumber": null,
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": null,
+              "isCashPurchase": null,
+              "isMortgagePurchase": null,
+              "isInterfamilyRelated": null,
+              "isInvestorPurchase": null,
+              "isResale": null,
+              "isShortSale": null,
+              "isForeclosureReo": null,
+              "isForeclosureReoSale": null
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": null,
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": null,
+                "mode": null,
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": null,
+              "state": null,
+              "zipCode": null,
+              "carrierRoute": null,
+              "county": null
+            },
+            "titleCompany": {
+              "name": null,
+              "code": null
+            },
+            "propertyDetails": {
+              "actualYearBuilt": null,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": null
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": null,
+              "landUseCode": null,
+              "stateLandUseDescription": null,
+              "countyLandUseDescription": null,
+              "zoningCode": null
+            },
+            "buyerDetails": {
+              "buyerNames": [],
+              "relationshipTypeCode": null,
+              "etalCode": null,
+              "occupancyCode": null,
+              "ownershipRightsCode": null,
+              "mailingAddress": {
+                "careOfName": null,
+                "streetAddress": null,
+                "streetAddressParsed": {
+                  "houseNumber": null,
+                  "houseNumberSuffix": null,
+                  "houseNumber2": null,
+                  "direction": null,
+                  "streetName": null,
+                  "mode": null,
+                  "quadrant": null,
+                  "unitNumber": null
+                },
+                "city": null,
+                "state": null,
+                "zipCode": null,
+                "carrierRoute": null
+              },
+              "hasPartialInterest": null,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": []
+            }
+          }
+        ],
+        "lastMarketSale": [
+          {
+            "clip": "1082098998",
+            "transactionDetails": {
+              "primaryCategoryCode": null,
+              "deedCategoryCode": null,
+              "saleDateDerived": null,
+              "saleRecordingDateDerived": null,
+              "saleAmount": null,
+              "saleTypeCode": null,
+              "saleDocumentTypeCode": null,
+              "saleDocumentNumber": null,
+              "saleBookNumber": null,
+              "salePageNumber": null,
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": null,
+              "isCashPurchase": null,
+              "isMortgagePurchase": null,
+              "isInterfamilyRelated": null,
+              "isInvestorPurchase": null,
+              "isResale": null,
+              "isShortSale": null,
+              "isForeclosureReo": null,
+              "isForeclosureReoSale": null
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": null,
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": null,
+                "mode": null,
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": null,
+              "state": null,
+              "zipCode": null,
+              "carrierRoute": null,
+              "county": null
+            },
+            "titleCompany": {
+              "name": null,
+              "code": null
+            },
+            "propertyDetails": {
+              "actualYearBuilt": null,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": null
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": null,
+              "landUseCode": null,
+              "stateLandUseDescription": null,
+              "countyLandUseDescription": null,
+              "zoningCode": null
+            },
+            "buyerDetails": {
+              "buyerNames": [],
+              "relationshipTypeCode": null,
+              "etalCode": null,
+              "occupancyCode": null,
+              "ownershipRightsCode": null,
+              "mailingAddress": {
+                "careOfName": null,
+                "streetAddress": null,
+                "streetAddressParsed": {
+                  "houseNumber": null,
+                  "houseNumberSuffix": null,
+                  "houseNumber2": null,
+                  "direction": null,
+                  "streetName": null,
+                  "mode": null,
+                  "quadrant": null,
+                  "unitNumber": null
+                },
+                "city": null,
+                "state": null,
+                "zipCode": null,
+                "carrierRoute": null
+              },
+              "hasPartialInterest": null,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "clip": "2134338742",
+      "v1PropertyId": "15003:115848614",
+      "propertyAddress": {
+        "streetAddress": "811 MIDDLE ST",
+        "propertyStreetAddressParsed": {
+          "houseNumber": "811",
+          "streetNamePrefixDir": null,
+          "streetName": "MIDDLE",
+          "streetNameSuffix": "ST",
+          "streetNameSuffixDir": null,
+          "unitType": null,
+          "unitNumber": null
+        },
+        "city": "HONOLULU",
+        "state": "HI",
+        "zipCode": "96819",
+        "zipPlus4": "2343",
+        "county": "HONOLULU"
+      },
+      "propertyAPN": {
+        "fipsCode": "15003",
+        "apnSequenceNumber": 1,
+        "apnParcelNumberUnformatted": "1120150060000",
+        "apnParcelNumberFormatted": "1-1-2-015-006-0000",
+        "previousApnUnformatted": null,
+        "alternateApn": null,
+        "universalParcelId": "115848614"
+      },
+      "addressMatchInformation": {
+        "propertyMatchScore": 9,
+        "resultCode": "ADDR:MULTIPLE",
+        "matchCode": "ADDR:ADDREXACT",
+        "addressType": "PROPERTY",
+        "addressMatchCode": "A0000",
+        "addressMatchCodeDescription": "Matched unique number"
+      },
+      "property_details": {
+        "allBuildingsSummary": {
+          "buildingsCount": 1,
+          "unitsCount": null,
+          "roomsCount": null,
+          "bedroomsCount": null,
+          "bathroomsCount": null,
+          "fullBathroomsCount": null,
+          "halfBathroomsCount": null,
+          "oneQtrBathroomsCount": null,
+          "threeQtrBathroomsCount": null,
+          "bathroomFixturesCount": null,
+          "fireplacesCount": null,
+          "livingAreaSquareFeet": 57554.0,
+          "totalAreaSquareFeet": 57554.0,
+          "openAreasSquareFeet": null,
+          "officeSpaceSquareFeet": null,
+          "elevatorsCount": null,
+          "loadingDocksCount": null,
+          "railSpursCount": null,
+          "truckDoorsCount": null
+        },
+        "ownership": {
+          "clip": "2134338742",
+          "currentOwners": {
+            "ownerNames": [
+              {
+                "sequenceNumber": 1,
+                "fullName": "CITY & COUNTY OF HONOLULU",
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": true
+              },
+              {
+                "sequenceNumber": 2,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 3,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              },
+              {
+                "sequenceNumber": 4,
+                "fullName": null,
+                "firstNameAndMiddleInitial": null,
+                "lastName": null,
+                "firstName": null,
+                "middleName": null,
+                "isCorporate": false
+              }
+            ],
+            "relationshipTypeCode": null,
+            "ownerEtalCode": null,
+            "occupancyCode": null,
+            "ownershipRightsCode": null
+          },
+          "currentOwnerMailingInfo": {
+            "mailingAddress": {
+              "careOfName": null,
+              "streetAddress": null,
+              "streetAddressParsed": {
+                "houseNumber": null,
+                "houseNumberSuffix": null,
+                "houseNumber2": null,
+                "direction": null,
+                "streetName": null,
+                "mailingMode": null,
+                "quadrant": null,
+                "unitNumber": null
+              },
+              "city": null,
+              "state": null,
+              "zipCode": null,
+              "carrierRoute": null,
+              "foreignAddress": null
+            },
+            "ownerMailingOptOutIndicator": null
+          }
+        },
+        "siteLocation": {
+          "clip": "2134338742",
+          "coordinatesParcel": {
+            "lat": 21.334997,
+            "lng": -157.884727
+          },
+          "coordinatesBlock": {
+            "lat": 21.335508,
+            "lng": -157.884668
+          },
+          "locationLegal": {
+            "subdivisionName": "MTL BUS STATION",
+            "subdivisionTractNumber": null,
+            "subdivisionPlatBookNumber": null,
+            "subdivisionPlatPageNumber": null,
+            "blockNumber": null,
+            "blockNumberSuffix": null,
+            "lotNumber": null,
+            "lotNumberSuffix": null,
+            "description": null
+          },
+          "locationSurvey": {
+            "range": null,
+            "township": null,
+            "section": null,
+            "quarterSection": null
+          },
+          "neighborhood": {
+            "code": "AO8",
+            "name": "KAPALAMA"
+          },
+          "municipality": {
+            "code": "15003OA001",
+            "name": "OAHU"
+          },
+          "town": {
+            "code": null
+          },
+          "jurisdictionCounty": {
+            "code": null
+          },
+          "cbsa": {
+            "code": "46520",
+            "type": "Metro"
+          },
+          "censusTract": {
+            "id": "0060003000"
+          },
+          "taxRateArea": {
+            "code": null
+          },
+          "taxDistrict": {
+            "name": null
+          },
+          "landUseAndZoningCodes": {
+            "propertyTypeCode": "28",
+            "landUseCode": "364",
+            "stateLandUseCode": "400",
+            "stateLandUseDescription": "INDUSTRIAL",
+            "countyLandUseCode": "400",
+            "countyLandUseDescription": "INDUSTRIAL",
+            "zoningCode": "U/42/40",
+            "zoningCodeDescription": "I-2 GENERAL INDUSTRY",
+            "isManufacturedHome": null
+          },
+          "lot": {
+            "areaAcres": 10.0477,
+            "areaSquareFeet": 437677,
+            "areaSquareFeetUsable": null,
+            "depthFeet": null,
+            "frontFeet": null,
+            "shapeCode": null,
+            "topographyType": null,
+            "easementTypeCode": null
+          },
+          "utilities": {
+            "fuelTypeCode": null,
+            "electricityWiringTypeCode": null,
+            "sewerTypeCode": null,
+            "utilitiesTypeCode": null,
+            "waterTypeCode": null
+          }
+        },
+        "taxAssessment": [
+          {
+            "clip": "2134338742",
+            "taxAmount": {
+              "billedYear": null,
+              "delinquentYear": null,
+              "areaCode": "4",
+              "areaCodeDescription": null,
+              "propertyTaxRate": null,
+              "calculatedTotalExemptionAmount": 67755100.0,
+              "totalTaxExemptionAmount": null,
+              "totalTaxAmount": null,
+              "countyTaxAmount": null,
+              "schoolTaxAmount": null,
+              "townTaxAmount": null,
+              "villageTaxAmount": null,
+              "netTaxAmount": null
+            },
+            "taxExemptions": {
+              "commercial": [],
+              "residential": []
+            },
+            "assessedValue": {
+              "taxAssessedYear": 2025,
+              "calculatedTotalValue": 67755100.0,
+              "calculatedLandValue": 61183100.0,
+              "calculatedImprovementValue": 6572000.0,
+              "calculatedImprovementValuePercentage": 10,
+              "calculatedTotalValueSourceCode": "M",
+              "taxableValue": null,
+              "taxableImprovementValue": null,
+              "taxableLandValue": null,
+              "taxableOtherValue": null
+            },
+            "taxrollUpdate": {
+              "lastAssessorUpdateDate": "2025-09-22",
+              "taxrollCertificationDate": "2025-02-01"
+            },
+            "schoolDistricts": {
+              "school": {
+                "code": "1500030",
+                "name": "HAWAII DEPT OF ED",
+                "elementary": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "middle": {
+                  "code": null,
+                  "name": null
+                },
+                "high": {
+                  "code": "1500030",
+                  "name": "HAWAII DEPT OF ED"
+                },
+                "communityCollege": {
+                  "code": null,
+                  "name": null
+                }
+              }
+            },
+            "serviceDistricts": {
+              "fire": {
+                "code": null,
+                "name": null
+              },
+              "trash": {
+                "code": null,
+                "name": null
+              },
+              "lighting": {
+                "code": null,
+                "name": null
+              },
+              "tax": {
+                "code": null,
+                "name": null
+              },
+              "sewer": {
+                "code": null,
+                "name": null
+              },
+              "utility": {
+                "code": null,
+                "name": null
+              },
+              "water": {
+                "code": null,
+                "name": null
+              }
+            }
+          }
+        ],
+        "mostRecentOwnerTransfer": [
+          {
+            "clip": "2134338742",
+            "transactionDetails": {
+              "primaryCategoryCode": "A",
+              "deedCategoryCode": "G",
+              "saleDateDerived": "1987-06-18",
+              "saleRecordingDateDerived": "1987-07-09",
+              "saleAmount": null,
+              "saleTypeCode": "",
+              "saleDocumentTypeCode": "DD",
+              "saleDocumentNumber": "1478109",
+              "saleBookNumber": "020882",
+              "salePageNumber": "000500",
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": "M",
+              "isCashPurchase": true,
+              "isMortgagePurchase": false,
+              "isInterfamilyRelated": false,
+              "isInvestorPurchase": false,
+              "isResale": true,
+              "isShortSale": false,
+              "isForeclosureReo": false,
+              "isForeclosureReoSale": false
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": "",
+              "streetAddressParsed": {
+                "houseNumber": "811",
+                "houseNumberSuffix": "",
+                "houseNumber2": "",
+                "direction": "",
+                "streetName": "MIDDLE",
+                "mode": "ST",
+                "quadrant": "",
+                "unitNumber": ""
+              },
+              "city": "HONOLULU",
+              "state": "HI",
+              "zipCode": "968192316",
+              "carrierRoute": "C016",
+              "county": "HONOLULU"
+            },
+            "titleCompany": {
+              "name": "",
+              "code": ""
+            },
+            "propertyDetails": {
+              "actualYearBuilt": 1993,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": false
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": "50",
+              "landUseCode": "300",
+              "stateLandUseDescription": "INDUSTRIAL",
+              "countyLandUseDescription": null,
+              "zoningCode": "42"
+            },
+            "buyerDetails": {
+              "buyerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD",
+                  "lastName": "OWNER",
+                  "firstNameAndMiddleInitial": "RECORD",
+                  "isCorporate": null
+                }
+              ],
+              "relationshipTypeCode": "",
+              "etalCode": "",
+              "occupancyCode": "",
+              "ownershipRightsCode": "",
+              "mailingAddress": {
+                "careOfName": "",
+                "streetAddress": "N/AVAIL",
+                "streetAddressParsed": {
+                  "houseNumber": "",
+                  "houseNumberSuffix": "",
+                  "houseNumber2": "",
+                  "direction": "",
+                  "streetName": "",
+                  "mode": "",
+                  "quadrant": "",
+                  "unitNumber": ""
+                },
+                "city": "",
+                "state": "",
+                "zipCode": "",
+                "carrierRoute": ""
+              },
+              "hasPartialInterest": false,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD"
+                }
+              ]
+            }
+          }
+        ],
+        "lastMarketSale": [
+          {
+            "clip": "2134338742",
+            "transactionDetails": {
+              "primaryCategoryCode": "A",
+              "deedCategoryCode": "G",
+              "saleDateDerived": "1987-06-18",
+              "saleRecordingDateDerived": "1987-07-09",
+              "saleAmount": null,
+              "saleTypeCode": "",
+              "saleDocumentTypeCode": "DD",
+              "saleDocumentNumber": "1478109",
+              "saleBookNumber": "020882",
+              "salePageNumber": "000500",
+              "ownershipTransferPercent": null,
+              "multiOrSplitParcelCode": "M",
+              "isCashPurchase": true,
+              "isMortgagePurchase": false,
+              "isInterfamilyRelated": false,
+              "isInvestorPurchase": false,
+              "isResale": true,
+              "isShortSale": false,
+              "isForeclosureReo": false,
+              "isForeclosureReoSale": false
+            },
+            "recordedPropertyAddress": {
+              "streetAddress": "",
+              "streetAddressParsed": {
+                "houseNumber": "811",
+                "houseNumberSuffix": "",
+                "houseNumber2": "",
+                "direction": "",
+                "streetName": "MIDDLE",
+                "mode": "ST",
+                "quadrant": "",
+                "unitNumber": ""
+              },
+              "city": "HONOLULU",
+              "state": "HI",
+              "zipCode": "968192316",
+              "carrierRoute": "C016",
+              "county": "HONOLULU"
+            },
+            "titleCompany": {
+              "name": "",
+              "code": ""
+            },
+            "propertyDetails": {
+              "actualYearBuilt": 1993,
+              "effectiveYearBuilt": null,
+              "isResidentialProperty": null,
+              "isNewConstruction": false
+            },
+            "landUseAndZoningCodes": {
+              "propertyTypeCode": "50",
+              "landUseCode": "300",
+              "stateLandUseDescription": "INDUSTRIAL",
+              "countyLandUseDescription": null,
+              "zoningCode": "42"
+            },
+            "buyerDetails": {
+              "buyerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD",
+                  "lastName": "OWNER",
+                  "firstNameAndMiddleInitial": "RECORD",
+                  "isCorporate": null
+                }
+              ],
+              "relationshipTypeCode": "",
+              "etalCode": "",
+              "occupancyCode": "",
+              "ownershipRightsCode": "",
+              "mailingAddress": {
+                "careOfName": "",
+                "streetAddress": "N/AVAIL",
+                "streetAddressParsed": {
+                  "houseNumber": "",
+                  "houseNumberSuffix": "",
+                  "houseNumber2": "",
+                  "direction": "",
+                  "streetName": "",
+                  "mode": "",
+                  "quadrant": "",
+                  "unitNumber": ""
+                },
+                "city": "",
+                "state": "",
+                "zipCode": "",
+                "carrierRoute": ""
+              },
+              "hasPartialInterest": false,
+              "mailingOptOutIndicator": null
+            },
+            "sellerDetails": {
+              "sellerNames": [
+                {
+                  "sequenceNumber": 1,
+                  "fullName": "OWNER RECORD"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "messages": []
+}
