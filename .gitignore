@@ -4,3 +4,35 @@ test
 .idea
 __pycache__
 app/__pycache__
+
+
+# Add to .gitignore
+.env
+*.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Data
+#data/output/*.json
+!data/output/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
