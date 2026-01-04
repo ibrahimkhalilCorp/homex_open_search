@@ -2,40 +2,44 @@ from openai import OpenAI
 from typing import List, Dict, Optional
 from app.config import Config
 from app.opensearch_client import get_opensearch_client
+import time
 
-# For Open AI API
+# # For Open AI API
 # openai_client = OpenAI(api_key=Config.OPENAI_API_KEY)
+# embedding_model = Config.OPENAI_API_EMBEDDING_MODEL
 
 # Point to your local LM Studio server
+embedding_model = Config.LM_STUDIO_EMBEDDING_MODEL
 openai_client = OpenAI(
     base_url=Config.LM_STUDIO_ENDPOINT,
     api_key=Config.LM_STUDIO_API_KEY  # LM Studio doesn't require a real key, but the client needs something
 )
 
-# def generate_embedding(text: str) -> Optional[List[float]]:
-#     """Generate vector embedding from text using OpenAI"""
-#     try:
-#         response = openai_client.embeddings.create(
-#             model="text-embedding-3-small",
-#             input=text
-#         )
-#         return response.data[0].embedding
-#     except Exception as e:
-#         print(f"Embedding generation failed: {e}")
-#         return None
-
-
 def generate_embedding(text: str) -> Optional[List[float]]:
-    """Generate vector embedding from text using local LM Studio"""
+    if not text or not text.strip():
+        print(f"[SKIP] Empty text provided for embedding")
+        return None
+
     try:
         response = openai_client.embeddings.create(
-            model="text-embedding-nomic-embed-text-v1.5",
+            model=embedding_model,
             input=text
         )
-        return response.data[0].embedding
+        embedding = response.data[0].embedding
+        # Validate embedding
+        if not embedding or len(embedding) == 0:
+            print(f"[ERROR] Empty embedding returned")
+            return None
+
+        if len(embedding) != Config.EMBEDDING_DIMENSION:
+            print(f"[ERROR] Embedding dimension mismatch: expected {Config.EMBEDDING_DIMENSION}, got {len(embedding)}")
+            return None
+
+        return embedding
     except Exception as e:
         print(f"Embedding generation failed: {e}")
         return None
+
 
 def create_property_description(property_data: Dict) -> str:
     """Create a rich text description for embedding"""
@@ -65,6 +69,7 @@ def create_property_description(property_data: Dict) -> str:
     living_sqft = buildings.get('livingAreaSquareFeet')
     total_sqft = buildings.get('totalAreaSquareFeet')
 
+    # Only add bedroom/bathroom info if they exist and are not null
     if bedrooms and bathrooms:
         parts.append(f"{bedrooms} bedroom, {bathrooms} bathroom property")
     if living_sqft:
@@ -114,18 +119,41 @@ def create_property_description(property_data: Dict) -> str:
 
 def index_property(property_data: Dict) -> bool:
     """Index a single property with vector embedding"""
+    clip = property_data.get('clip', 'Unknown')
+
     try:
         opensearch_client = get_opensearch_client()
 
-        # Generate description and embedding
+        # Generate description
         description = create_property_description(property_data)
-        embedding = generate_embedding(description)
 
-        if embedding is None:
-            print(f"Skipping {property_data.get('clip')} - embedding failed")
+        if not description or not description.strip():
+            print(f"[SKIP] {clip} - Empty description generated")
             return False
 
-        # Add generated fields
+        print(f"\n[PROCESSING] {clip}")
+        print(f"   Description: {description[:100]}...")
+        print(f"   Length: {len(description)} chars")
+
+        # Generate embedding
+        print(f"   Generating embedding...")
+        start = time.time()
+        embedding = generate_embedding(description)
+        elapsed = time.time() - start
+
+        if embedding is None:
+            print(f"[SKIP] {clip} - Embedding generation failed")
+            return False
+
+        print(f"   ✅ Embedding generated in {elapsed:.2f}s")
+        print(f"   Dimension: {len(embedding)}")
+
+        # Validate embedding before adding to property_data
+        if len(embedding) != Config.EMBEDDING_DIMENSION:
+            print(f"[SKIP] {clip} - Invalid embedding dimension: {len(embedding)}")
+            return False
+
+        # Add generated fields ONLY if embedding was successful
         property_data['description'] = description
         property_data['description_vector'] = embedding
 
@@ -143,15 +171,18 @@ def index_property(property_data: Dict) -> bool:
         # Index in OpenSearch
         opensearch_client.index(
             index=Config.INDEX_NAME,
-            id=property_data['clip'],
+            id=clip,
             body=property_data,
             refresh=True
         )
 
+        print(f"[SUCCESS] ✅ Indexed {clip}\n")
         return True
 
     except Exception as e:
-        print(f"Failed to index {property_data.get('clip')}: {e}")
+        print(f"[ERROR] ❌ Failed to index {clip}: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 

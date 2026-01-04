@@ -21,11 +21,14 @@ class Config:
 
     # OpenAI
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    OPENAI_API_EMBEDDING_MODEL = os.getenv("OPENAI_API_EMBEDDING_MODEL", "text-embedding-3-small")
 
     #LM Studio
     LM_STUDIO_ENDPOINT = os.getenv("LM_STUDIO_ENDPOINT", "http://172.30.160.1:1234/v1")
     LM_STUDIO_API_KEY = os.getenv("LM_STUDIO_API_KEY", "lm-studio")
+    LM_STUDIO_EMBEDDING_MODEL = os.getenv("LM_STUDIO_EMBEDDING_MODEL", "text-embedding-nomic-embed-text-v1.5")
 
     # Index Configuration
     INDEX_NAME = "corelogic_properties_vector"
-    EMBEDDING_DIMENSION = 1536
+    # EMBEDDING_DIMENSION = 1536 ## For Open AI API
+    EMBEDDING_DIMENSION = 768 ## For LM Studio API
