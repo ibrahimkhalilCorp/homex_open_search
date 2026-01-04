@@ -22,6 +22,10 @@ class Config:
     # OpenAI
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+    #LM Studio
+    LM_STUDIO_ENDPOINT = os.getenv("LM_STUDIO_ENDPOINT", "http://172.30.160.1:1234/v1")
+    LM_STUDIO_API_KEY = os.getenv("LM_STUDIO_API_KEY", "lm-studio")
+
     # Index Configuration
     INDEX_NAME = "corelogic_properties_vector"
     EMBEDDING_DIMENSION = 1536

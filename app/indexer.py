@@ -3,21 +3,39 @@ from typing import List, Dict, Optional
 from app.config import Config
 from app.opensearch_client import get_opensearch_client
 
-openai_client = OpenAI(api_key=Config.OPENAI_API_KEY)
+# For Open AI API
+# openai_client = OpenAI(api_key=Config.OPENAI_API_KEY)
+
+# Point to your local LM Studio server
+openai_client = OpenAI(
+    base_url=Config.LM_STUDIO_ENDPOINT,
+    api_key=Config.LM_STUDIO_API_KEY  # LM Studio doesn't require a real key, but the client needs something
+)
+
+# def generate_embedding(text: str) -> Optional[List[float]]:
+#     """Generate vector embedding from text using OpenAI"""
+#     try:
+#         response = openai_client.embeddings.create(
+#             model="text-embedding-3-small",
+#             input=text
+#         )
+#         return response.data[0].embedding
+#     except Exception as e:
+#         print(f"Embedding generation failed: {e}")
+#         return None
 
 
 def generate_embedding(text: str) -> Optional[List[float]]:
-    """Generate vector embedding from text using OpenAI"""
+    """Generate vector embedding from text using local LM Studio"""
     try:
         response = openai_client.embeddings.create(
-            model="text-embedding-3-small",
+            model="text-embedding-nomic-embed-text-v1.5",
             input=text
         )
         return response.data[0].embedding
     except Exception as e:
         print(f"Embedding generation failed: {e}")
         return None
-
 
 def create_property_description(property_data: Dict) -> str:
     """Create a rich text description for embedding"""
