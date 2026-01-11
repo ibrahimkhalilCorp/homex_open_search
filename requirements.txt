@@ -45,6 +45,9 @@ pytest
 pytest-asyncio
 httpx
 
+# For SQLite
+sqlalchemy
+
 # Auth
 python-jose
 passlib
