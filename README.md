@@ -1,0 +1,831 @@
+# 🏠 CoreLogic Property Search API
+
+A powerful FastAPI application for loading, indexing, and searching CoreLogic property data with **semantic vector search** capabilities powered by OpenAI embeddings and OpenSearch.
+
+## ✨ Features
+
+- 🔍 **Hybrid Search**: Combines semantic vector search with keyword filtering
+- 🤖 **AI-Powered**: Uses OpenAI embeddings for intelligent property matching
+- 🚀 **Auto-Configuration**: Automatically creates and fixes OpenSearch indexes
+- 📊 **Rich Property Data**: Integrates with CoreLogic API for comprehensive property information
+- ⚡ **Fast & Efficient**: Optimized search with k-NN vector similarity
+- 📝 **Well Documented**: Full Swagger/OpenAPI documentation
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐
+│   FastAPI App   │
+└────────┬────────┘
+         │
+    ┌────┴──────┐
+    │           │
+┌───▼─────┐  ┌──▼─────────┐
+│CoreLogic│  │ OpenSearch │
+│  API    │  │  + k-NN    │
+└─────────┘  └─────┬──────┘
+                   │
+             ┌─────▼─────┐
+             │  OpenAI   │
+             │ Embeddings│
+             └───────────┘
+```
+
+## 📋 Table of Contents
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Quick Start](#quick-start)
+- [API Endpoints](#api-endpoints)
+- [Usage Examples](#usage-examples)
+- [Search Capabilities](#search-capabilities)
+- [Project Structure](#project-structure)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Usage](#advanced-usage)
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Python 3.8+
+- OpenSearch 2.x (running locally or remotely)
+- CoreLogic API credentials
+- OpenAI API key
+
+### Step 1: Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd property-api
+```
+
+### Step 2: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+**requirements.txt:**
+```
+fastapi==0.109.0
+uvicorn==0.27.0
+requests==2.31.0
+python-dotenv==1.0.0
+pydantic==2.5.0
+opensearch-py==2.4.0
+openai==1.12.0
+```
+
+### Step 3: Install and Run OpenSearch
+
+#### Using Docker (Recommended)
+
+```bash
+docker run -d \
+  -p 9200:9200 \
+  -p 9600:9600 \
+  -e "discovery.type=single-node" \
+  -e "OPENSEARCH_INITIAL_ADMIN_PASSWORD=Ibr@#25085#@" \
+  --name opensearch \
+  opensearchproject/opensearch:2.11.0
+```
+
+#### Or Download Manually
+
+1. Download from [OpenSearch.org](https://opensearch.org/downloads.html)
+2. Extract and run:
+   ```bash
+   cd opensearch-2.x.x
+   ./opensearch-tar-install.sh
+   ```
+
+### Step 4: Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+# CoreLogic API Credentials
+ACCESS_TOKEN_URL=https://api.corelogic.com/oauth/token
+CLIENT_ID=your_corelogic_client_id
+CLIENT_SECRET=your_corelogic_client_secret
+COOKIE=your_session_cookie
+DEVELOPER_EMAIL=your_email@example.com
+
+# OpenSearch Configuration
+OPENSEARCH_HOST=localhost
+OPENSEARCH_PORT=9200
+OPENSEARCH_USER=admin
+OPENSEARCH_PASSWORD=Ibr@#25085#@
+
+# OpenAI API Key
+OPENAI_API_KEY=sk-your-openai-api-key-here
+```
+
+---
+
+## ⚙️ Configuration
+
+### Index Configuration
+
+The application automatically creates an OpenSearch index with these settings:
+
+- **Index Name**: `corelogic_properties_vector`
+- **Vector Dimension**: 1536 (OpenAI text-embedding-3-small)
+- **Vector Algorithm**: HNSW (Hierarchical Navigable Small World)
+- **Similarity Metric**: Cosine similarity
+
+### Customization
+
+Edit `app/config.py` to customize:
+
+```python
+class Config:
+    # Index settings
+    INDEX_NAME = "corelogic_properties_vector"
+    EMBEDDING_DIMENSION = 1536
+    
+    # OpenSearch settings
+    OPENSEARCH_HOST = os.getenv("OPENSEARCH_HOST", "localhost")
+    OPENSEARCH_PORT = int(os.getenv("OPENSEARCH_PORT", "9200"))
+```
+
+---
+
+## 🎯 Quick Start
+
+### 1. Start the API Server
+
+```bash
+python main.py
+```
+
+The server will start at `http://localhost:8000`
+
+**You should see:**
+```
+======================================================================
+🏠 PROPERTY DATA API - STARTUP
+======================================================================
+
+✨ Features:
+  • Auto-creates OpenSearch index with k-NN support
+  • Auto-fixes misconfigured indexes
+  • Semantic vector search with OpenAI embeddings
+  • CoreLogic API integration
+
+📚 API Documentation: http://localhost:8000/docs
+
+💡 Quick Start:
+  1. POST /api/data-load with index_in_opensearch: true
+  2. POST /api/search with your query
+
+======================================================================
+```
+
+### 2. Load Property Data
+
+**Option A: From CoreLogic API**
+
+```bash
+curl -X POST http://localhost:8000/api/data-load \
+  -H "Content-Type: application/json" \
+  -d '{
+    "addresses": [
+      {
+        "street": "811 MIDDLE ST",
+        "city": "HONOLULU",
+        "state": "HI",
+        "zip_code": "96819",
+        "county": "HONOLULU"
+      }
+    ],
+    "save_to_file": true,
+    "index_in_opensearch": true
+  }'
+```
+
+**Option B: From JSON File**
+
+```bash
+curl -X POST "http://localhost:8000/api/index/load-from-file?filepath=property_search_data.json"
+```
+
+**What happens automatically:**
+1. ✅ Checks if OpenSearch index exists
+2. ✅ Creates index with k-NN vector support (if needed)
+3. ✅ Fetches property data from CoreLogic API
+4. ✅ Generates AI embeddings for each property
+5. ✅ Indexes properties for semantic search
+6. ✅ Ready for instant search!
+
+### 3. Search Properties
+
+```bash
+curl -X POST http://localhost:8000/api/search \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "large industrial property in Honolulu",
+    "page": 1,
+    "size": 10
+  }'
+```
+
+**Response:**
+```json
+{
+  "query": "large industrial property in Honolulu",
+  "total": 3,
+  "page": 1,
+  "properties": [
+    {
+      "clip": "8031606271",
+      "address": {
+        "streetAddress": "811 MIDDLE ST",
+        "city": "HONOLULU",
+        "state": "HI",
+        "zipCode": "96819"
+      },
+      "description": "Property ID 8031606271. Located at 811 MIDDLE ST, HONOLULU, HI...",
+      "score": 0.8947,
+      "details": {
+        "bedrooms": null,
+        "bathrooms": null,
+        "livingAreaSqFt": 33549,
+        "totalAreaSqFt": 33549
+      },
+      "assessedValue": {
+        "total": 31086100.0,
+        "year": 2025
+      }
+    }
+  ]
+}
+```
+
+---
+
+## 📚 API Endpoints
+
+### Core Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/` | Root endpoint with API information |
+| `GET` | `/docs` | Interactive Swagger UI documentation |
+| `GET` | `/health` | Health check with index status |
+
+### Data Loading
+
+#### `POST /api/data-load`
+
+Load property data from CoreLogic API and optionally index in OpenSearch.
+
+**Request Body:**
+```json
+{
+  "addresses": [
+    {
+      "street": "811 MIDDLE ST",
+      "city": "HONOLULU",
+      "state": "HI",
+      "zip_code": "96819",
+      "county": "HONOLULU"
+    }
+  ],
+  "save_to_file": true,
+  "index_in_opensearch": true
+}
+```
+
+**Parameters:**
+- `addresses` (required): List of property addresses to fetch
+- `save_to_file` (optional, default: true): Save response to JSON file
+- `index_in_opensearch` (optional, default: false): Index properties with embeddings
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "Processed 1 properties",
+  "properties_processed": 1,
+  "files_saved": ["property_search_data.json"],
+  "indexed_count": 3,
+  "failed_count": 0
+}
+```
+
+### Search
+
+#### `POST /api/search`
+
+Hybrid semantic + keyword search for properties.
+
+**Request Body:**
+```json
+{
+  "query": "3 bedroom residential property under 500k",
+  "page": 1,
+  "size": 20
+}
+```
+
+**Search Query Examples:**
+- `"industrial property in Honolulu"`
+- `"3 bedroom residential under 500k"`
+- `"commercial property with large lot"`
+- `"affordable property in Hawaii"`
+- `"corporate owned industrial building"`
+
+**Smart Filter Detection:**
+- Bedrooms: `"3 bed"`, `"4 bedroom"`, `"2 br"`
+- Price: `"under 500k"`, `"below $1,000,000"`, `"less than 750000"`
+- Location: `"in Honolulu"`, `"HI"`, `"Honolulu County"`
+- Type: `"residential"`, `"commercial"`, `"industrial"`
+
+### Index Management
+
+#### `POST /api/index/create`
+
+Manually create OpenSearch index (usually not needed due to auto-creation).
+
+**Response:**
+```json
+{
+  "status": "created",
+  "message": "Index created successfully"
+}
+```
+
+#### `POST /api/index/load-from-file`
+
+Load and index properties from a JSON file (auto-creates/fixes index).
+
+**Query Parameters:**
+- `filepath` (optional, default: "property_search_data.json"): Path to JSON file
+
+**Example:**
+```bash
+curl -X POST "http://localhost:8000/api/index/load-from-file?filepath=my_properties.json"
+```
+
+#### `GET /api/index/stats`
+
+Get index statistics.
+
+**Response:**
+```json
+{
+  "index": "corelogic_properties_vector",
+  "document_count": 3
+}
+```
+
+#### `GET /api/index/list`
+
+List all indexed properties (first 100).
+
+**Response:**
+```json
+{
+  "total": 3,
+  "properties": [
+    {
+      "clip": "8031606271",
+      "address": {...},
+      "description": "Property ID 8031606271..."
+    }
+  ]
+}
+```
+
+#### `DELETE /api/index/delete`
+
+Delete the OpenSearch index (⚠️ WARNING: Deletes all indexed data).
+
+**Response:**
+```json
+{
+  "status": "deleted",
+  "message": "Index 'corelogic_properties_vector' deleted successfully"
+}
+```
+
+---
+
+## 🔍 Search Capabilities
+
+### Semantic Search
+
+Uses OpenAI embeddings to understand the **meaning** of your queries:
+
+```bash
+# Query: "affordable family home"
+# Matches: Properties described as "residential", "3 bedroom", "suitable for families"
+```
+
+### Keyword Filtering
+
+Extracts structured filters from natural language:
+
+| Query | Extracted Filters |
+|-------|-------------------|
+| `"3 bedroom property"` | bedrooms = 3 |
+| `"under 500k"` | assessed_value ≤ 500,000 |
+| `"in Honolulu"` | city = HONOLULU |
+| `"industrial property"` | land_use = INDUSTRIAL |
+| `"residential under 1M in HI"` | residential + price ≤ 1M + state = HI |
+
+### Hybrid Approach
+
+Combines both for best results:
+
+```
+Semantic Understanding + Exact Filters = Perfect Results
+```
+
+**Example:**
+```
+Query: "spacious industrial property in Honolulu under 50 million"
+
+1. Semantic: Understands "spacious" = large square footage
+2. Filters: 
+   - land_use = INDUSTRIAL
+   - city = HONOLULU
+   - assessed_value ≤ 50,000,000
+
+Result: Large industrial properties in Honolulu within budget
+```
+
+---
+
+## 📁 Project Structure
+
+```
+property-api/
+├── app/
+│   ├── __init__.py
+│   ├── config.py              # Configuration and environment variables
+│   ├── api_client.py          # CoreLogic API client
+│   ├── opensearch_client.py   # OpenSearch connection
+│   ├── indexer.py             # Indexing with vector embeddings
+│   ├── search_service.py      # Hybrid search logic
+│   └── utils.py               # Utility functions
+├── data/
+│   └── output/                # Saved property JSON files
+├── main.py                    # FastAPI application
+├── fix_index.py              # Index fix script (backup)
+├── manage_index.py           # Index management CLI (optional)
+├── requirements.txt          # Python dependencies
+├── .env                      # Environment variables (create this)
+├── .env.example             # Environment template
+└── README.md                # This file
+```
+
+### Key Files
+
+**`app/config.py`**: Configuration and environment variables
+```python
+class Config:
+    # API settings
+    INDEX_NAME = "corelogic_properties_vector"
+    EMBEDDING_DIMENSION = 1536
+    
+    # Load from .env
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+```
+
+**`app/indexer.py`**: Creates index and generates embeddings
+```python
+def create_index():
+    """Creates OpenSearch index with k-NN vector support"""
+
+def index_property(property_data):
+    """Generates embedding and indexes a property"""
+```
+
+**`app/search_service.py`**: Hybrid search implementation
+```python
+def hybrid_search(user_query, page=1, size=20):
+    """Combines vector search with keyword filters"""
+
+def parse_query(user_input):
+    """Extracts filters from natural language"""
+```
+
+**`main.py`**: FastAPI application with auto-fix logic
+```python
+def ensure_index_exists_with_knn():
+    """Auto-creates/fixes index before operations"""
+```
+
+---
+
+## 🛠️ Troubleshooting
+
+### Issue 1: "Field 'description_vector' is not knn_vector type"
+
+**Cause**: Index was created without k-NN support
+
+**Solution**: The API now auto-fixes this! Just use:
+```bash
+curl -X POST http://localhost:8000/api/data-load \
+  -H "Content-Type: application/json" \
+  -d '{
+    "addresses": [...],
+    "index_in_opensearch": true
+  }'
+```
+
+Or manually:
+```bash
+# Delete old index
+curl -X DELETE http://localhost:8000/api/index/delete
+
+# Load data (auto-creates proper index)
+curl -X POST "http://localhost:8000/api/index/load-from-file"
+```
+
+### Issue 2: "OpenSearch connection refused"
+
+**Cause**: OpenSearch is not running
+
+**Solution**:
+```bash
+# Check if OpenSearch is running
+curl http://localhost:9200
+
+# Start OpenSearch (Docker)
+docker start opensearch
+
+# Or check logs
+docker logs opensearch
+```
+
+### Issue 3: "Authentication failed" (CoreLogic)
+
+**Cause**: Invalid API credentials
+
+**Solution**:
+1. Check your `.env` file has correct credentials
+2. Verify `CLIENT_ID` and `CLIENT_SECRET`
+3. Ensure `ACCESS_TOKEN_URL` is correct
+
+### Issue 4: "Embedding generation failed"
+
+**Cause**: Invalid OpenAI API key or no internet
+
+**Solution**:
+1. Verify `OPENAI_API_KEY` in `.env`
+2. Test the key:
+   ```bash
+   curl https://api.openai.com/v1/models \
+     -H "Authorization: Bearer $OPENAI_API_KEY"
+   ```
+3. Check internet connectivity
+
+### Issue 5: No search results
+
+**Possible causes and solutions:**
+
+**A. No data indexed:**
+```bash
+# Check document count
+curl http://localhost:8000/api/index/stats
+
+# If 0, load data first
+curl -X POST "http://localhost:8000/api/index/load-from-file"
+```
+
+**B. Query too specific:**
+```bash
+# Try broader query
+curl -X POST http://localhost:8000/api/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "property", "size": 10}'
+```
+
+**C. Index misconfigured:**
+```bash
+# Check health
+curl http://localhost:8000/health
+
+# If knn_enabled: false, delete and reload
+curl -X DELETE http://localhost:8000/api/index/delete
+curl -X POST "http://localhost:8000/api/index/load-from-file"
+```
+
+---
+
+## 🚀 Advanced Usage
+
+### Custom Index Management Script
+
+Create `manage_index.py` for easier index management:
+
+```bash
+# Check index status
+python manage_index.py status
+
+# Create new index
+python manage_index.py create
+
+# Reset and reload data
+python manage_index.py reindex
+
+# Load from custom file
+python manage_index.py load my_data.json
+```
+
+### Bulk Property Loading
+
+Load multiple properties efficiently:
+
+```python
+addresses = [
+    {"street": "123 Main St", "city": "Honolulu", ...},
+    {"street": "456 Oak Ave", "city": "Honolulu", ...},
+    # ... add more
+]
+
+curl -X POST http://localhost:8000/api/data-load \
+  -H "Content-Type: application/json" \
+  -d "{\"addresses\": $addresses, \"index_in_opensearch\": true}"
+```
+
+### Custom Search Queries
+
+**Geographic search:**
+```json
+{
+  "query": "property within 5km of downtown Honolulu"
+}
+```
+
+**Price range:**
+```json
+{
+  "query": "industrial property between 1M and 5M"
+}
+```
+
+**Multiple filters:**
+```json
+{
+  "query": "3 bedroom residential property under 800k in good neighborhood"
+}
+```
+
+### Monitoring and Performance
+
+**Check API health:**
+```bash
+curl http://localhost:8000/health
+```
+
+**Monitor OpenSearch:**
+```bash
+# Cluster health
+curl http://localhost:9200/_cluster/health?pretty
+
+# Index statistics
+curl http://localhost:9200/corelogic_properties_vector/_stats?pretty
+```
+
+**View logs:**
+```bash
+# FastAPI logs (in terminal)
+# OpenSearch logs
+docker logs opensearch
+```
+
+---
+
+## 📊 Performance Optimization
+
+### Indexing Performance
+
+- **Batch size**: Default 50 properties per batch
+- **Embedding cost**: ~$0.00002 per property (OpenAI pricing)
+- **Indexing speed**: ~3-5 seconds per property (with embeddings)
+
+### Search Performance
+
+- **Typical search**: 100-300ms
+- **k-NN parameters**: k=100 for initial retrieval
+- **Pagination**: Default 20 results per page
+
+### Cost Estimation
+
+**OpenAI Embeddings (text-embedding-3-small):**
+- Cost: $0.02 per 1M tokens
+- Average property description: ~250 tokens
+- Cost per property: ~$0.000005
+
+**Example:**
+- 1,000 properties = ~$0.005
+- 10,000 properties = ~$0.05
+- 100,000 properties = ~$0.50
+
+---
+
+## 🔐 Security Best Practices
+
+1. **Never commit `.env` file** to version control
+2. **Use environment variables** for all credentials
+3. **Enable SSL/TLS** for OpenSearch in production
+4. **Rotate API keys** regularly
+5. **Use authentication** for API endpoints in production
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 📞 Support
+
+For issues, questions, or contributions:
+
+- **GitHub Issues**: [Create an issue](https://github.com/yourusername/property-api/issues)
+- **Documentation**: http://localhost:8000/docs (when running)
+- **Email**: your-email@example.com
+
+---
+
+## 🙏 Acknowledgments
+
+- **CoreLogic** for property data API
+- **OpenSearch** for powerful search capabilities
+- **OpenAI** for embedding generation
+- **FastAPI** for excellent web framework
+
+---
+
+## 📈 Roadmap
+
+- [ ] Add geographic radius search
+- [ ] Implement property comparison features
+- [ ] Add real-time property updates
+- [ ] Support for multiple data sources
+- [ ] Advanced analytics and reporting
+- [ ] GraphQL API support
+- [ ] Property image search
+- [ ] Market trend analysis
+
+---
+
+## 🎉 Quick Reference
+
+### Essential Commands
+
+```bash
+# Start server
+python main.py
+
+# Load data from CoreLogic
+curl -X POST http://localhost:8000/api/data-load \
+  -H "Content-Type: application/json" \
+  -d '{"addresses": [...], "index_in_opensearch": true}'
+
+# Search properties
+curl -X POST http://localhost:8000/api/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "your search query"}'
+
+# Check health
+curl http://localhost:8000/health
+
+# View documentation
+open http://localhost:8000/docs
+```
+
+### Common Search Queries
+
+```
+"industrial property in Honolulu"
+"3 bedroom house under 500k"
+"commercial property with parking"
+"waterfront residential property"
+"property with large lot"
+"affordable starter home"
+```
+
+---
+
+**Made with ❤️ for property search**

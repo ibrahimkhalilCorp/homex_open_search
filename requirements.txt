@@ -1,0 +1,51 @@
+# Core FastAPI
+fastapi
+uvicorn[standard]
+pydantic
+
+# HTTP & API clients
+requests
+httpx
+
+# OpenSearch
+opensearch-py
+
+# Redis for caching
+redis
+hiredis
+
+# OpenAI & Embeddings
+openai
+
+# Rate limiting
+slowapi
+
+# CORS
+python-multipart
+
+# Environment variables
+python-dotenv
+
+# Data processing
+numpy
+
+# Production servers
+gunicorn
+
+# Monitoring (optional)
+prometheus-client
+psutil
+
+# Background tasks (optional)
+celery
+redis[hiredis]
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Auth
+python-jose
+passlib
+passlib[bcrypt]
